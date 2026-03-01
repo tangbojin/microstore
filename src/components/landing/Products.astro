@@ -1,83 +1,443 @@
 ---
 import { Image } from "astro:assets";
-import p1 from "@/images/1.jpeg";
-import p2 from "@/images/2.jpeg";
-import p3 from "@/images/3.jpeg";
-import p4 from "@/images/4.jpeg";
-import p5 from "@/images/5.jpeg";
-import p6 from "@/images/6.jpeg";
-const products = [
-  {
-    url: "#_",
-    title: "Dual-Port Bit Driver",
-    subtitle: "Cobalt blue CNC finish",
-    price: "$59",
-    image: p1,
-  },
-  {
-    url: "#_",
-    title: "Analog Audio Control Hub",
-    subtitle: "Soft matte with ring LEDs",
-    price: "$79",
-    image: p2,
-  },
-  {
-    url: "#_",
-    title: "Laser Range Unit",
-    subtitle: "Black anodized edge + sensor",
-    price: "$110",
-    image: p3,
-  },
-  {
-    url: "#_",
-    title: "Smart Object Desk Set",
-    subtitle: "Minimalist modular kit",
-    price: "$129",
-    image: p4,
-  },
-  {
-    url: "#_",
-    title: "Modular Synth Box",
-    subtitle: "Magnetic knobs, dual input",
-    price: "$149",
-    image: p5,
-  },
-  {
-    url: "#_",
-    title: "Compact Action Camera",
-    subtitle: "Transparent shell, neon ring",
-    price: "$189",
-    image: p6,
-  },
+// Tag
+import p1 from "@/images/product/Tag/1.jpg";
+import p2 from "@/images/product/Tag/2.jpg";
+import p3 from "@/images/product/Tag/3.jpg";
+import p4 from "@/images/product/Tag/4.jpg";
+import p5 from "@/images/product/Tag/5.jpg";
+import p6 from "@/images/product/Tag/6.jpg";
+import p7 from "@/images/product/Tag/7.jpg";
+// 疤痕贴
+import a1 from "@/images/product/bahentie/1.jpg";
+import a2 from "@/images/product/bahentie/2.jpg";
+import a3 from "@/images/product/bahentie/3.jpg";
+import a4 from "@/images/product/bahentie/4.jpg";
+import a5 from "@/images/product/bahentie/5.jpg";
+import a6 from "@/images/product/bahentie/6.jpg";
+// 鼻贴
+import b1 from "@/images/product/bitie/1.jpg";
+import b2 from "@/images/product/bitie/2.jpg";
+import b3 from "@/images/product/bitie/3.jpg";
+import b4 from "@/images/product/bitie/4.jpg";
+import b5 from "@/images/product/bitie/5.jpg";
+import b6 from "@/images/product/bitie/6.jpg";
+import b7 from "@/images/product/bitie/7.jpg";
+// 耳塞
+import c1 from "@/images/product/ersai/1.jpg";
+import c2 from "@/images/product/ersai/2.jpg";
+import c3 from "@/images/product/ersai/3.jpg";
+import c4 from "@/images/product/ersai/4.jpg";
+import c5 from "@/images/product/ersai/5.jpg";
+import c6 from "@/images/product/ersai/6.jpg";
+// 清洁刷
+import d1 from "@/images/product/qingjieshua/1.jpg";
+import d2 from "@/images/product/qingjieshua/2.jpg";
+import d3 from "@/images/product/qingjieshua/3.jpg";
+import d4 from "@/images/product/qingjieshua/4.jpg";
+import d5 from "@/images/product/qingjieshua/5.jpg";
+import d6 from "@/images/product/qingjieshua/6.jpg";
+// 祛痘贴
+import e1 from "@/images/product/qudoutie/1.jpg";
+import e2 from "@/images/product/qudoutie/2.jpg";
+import e3 from "@/images/product/qudoutie/3.jpg";
+import e4 from "@/images/product/qudoutie/4.jpg";
+import e5 from "@/images/product/qudoutie/5.jpg";
+import e6 from "@/images/product/qudoutie/6.jpg";
+// 乳贴
+import f1 from "@/images/product/rutie/1.jpg";
+import f2 from "@/images/product/rutie/2.jpg";
+import f3 from "@/images/product/rutie/3.jpg";
+import f4 from "@/images/product/rutie/4.jpg";
+import f5 from "@/images/product/rutie/5.jpg";
+import f6 from "@/images/product/rutie/6.jpg";
+// 自拍杆
+import g1 from "@/images/product/zipaigan/1.jpg";
+import g2 from "@/images/product/zipaigan/2.jpg";
+import g3 from "@/images/product/zipaigan/3.jpg";
+import g4 from "@/images/product/zipaigan/4.jpg";
+import g5 from "@/images/product/zipaigan/5.jpg";
+import g6 from "@/images/product/zipaigan/6.jpg";
+import g7 from "@/images/product/zipaigan/7.jpg";
+
+// 数据定义
+const tag = [
+  { url: "https://www.amazon.de/dp/B0FV7FB925", title: "Key Finder Smart Tag, Compatible with Apple Find My (iOS Only), for Suitcases/Bags/Keys/Children's Backpacks, Replaceable Battery, Black", subtitle: "1", price: "€9.99", image: p1 },
+  { url: "https://www.amazon.de/dp/B0FV7FB925", title: "Key Finder Smart Tag, Compatible with Apple Find My (iOS Only), for Suitcases/Bags/Keys/Children's Backpacks, Replaceable Battery, Black", subtitle: "1", price: "€9.99", image: p2 },
+  { url: "https://www.amazon.de/dp/B0FV7FB925", title: "Key Finder Smart Tag, Compatible with Apple Find My (iOS Only), for Suitcases/Bags/Keys/Children's Backpacks, Replaceable Battery, Black", subtitle: "1", price: "€9.99", image: p3 },
+  { url: "https://www.amazon.de/dp/B0FV7FB925", title: "Key Finder Smart Tag, Compatible with Apple Find My (iOS Only), for Suitcases/Bags/Keys/Children's Backpacks, Replaceable Battery, Black", subtitle: "1", price: "€9.99", image: p4 },
+  { url: "https://www.amazon.de/dp/B0FV7FB925", title: "Key Finder Smart Tag, Compatible with Apple Find My (iOS Only), for Suitcases/Bags/Keys/Children's Backpacks, Replaceable Battery, Black", subtitle: "1", price: "€9.99", image: p5 },
+  { url: "https://www.amazon.de/dp/B0FV7FB925", title: "Key Finder Smart Tag, Compatible with Apple Find My (iOS Only), for Suitcases/Bags/Keys/Children's Backpacks, Replaceable Battery, Black", subtitle: "1", price: "€9.99", image: p6 },
+  { url: "https://www.amazon.de/dp/B0FV7FB925", title: "Key Finder Smart Tag, Compatible with Apple Find My (iOS Only), for Suitcases/Bags/Keys/Children's Backpacks, Replaceable Battery, Black", subtitle: "1", price: "€9.99", image: p7 },
+];
+
+const bahentie = [
+  { url: "https://www.amazon.de/dp/B0FPFZYHYK", title: "Silicone Scar Plaster, 150 cm, Reusable & Medical, for Caesarean Section, Scars & Keloid, Skin-friendly, Breathable, Waterproof", subtitle: "高效修复", price: "€9.99", image: a1 },
+  { url: "https://www.amazon.de/dp/B0FPFZYHYK", title: "Silicone Scar Plaster, 150 cm, Reusable & Medical, for Caesarean Section, Scars & Keloid, Skin-friendly, Breathable, Waterproof", subtitle: "温和护理", price: "€9.99", image: a2 },
+  { url: "https://www.amazon.de/dp/B0FPFZYHYK", title: "Silicone Scar Plaster, 150 cm, Reusable & Medical, for Caesarean Section, Scars & Keloid, Skin-friendly, Breathable, Waterproof", subtitle: "持久保护", price: "€9.99", image: a3 },
+  { url: "https://www.amazon.de/dp/B0FPFZYHYK", title: "Silicone Scar Plaster, 150 cm, Reusable & Medical, for Caesarean Section, Scars & Keloid, Skin-friendly, Breathable, Waterproof", subtitle: "透气舒适", price: "€9.99", image: a4 },
+  { url: "https://www.amazon.de/dp/B0FPFZYHYK", title: "Silicone Scar Plaster, 150 cm, Reusable & Medical, for Caesarean Section, Scars & Keloid, Skin-friendly, Breathable, Waterproof", subtitle: "隐形设计", price: "€9.99", image: a5 },
+  { url: "https://www.amazon.de/dp/B0FPFZYHYK", title: "Silicone Scar Plaster, 150 cm, Reusable & Medical, for Caesarean Section, Scars & Keloid, Skin-friendly, Breathable, Waterproof", subtitle: "医用级别", price: "€9.99", image: a6 },
+];
+
+const bitie = [
+  { url: "https://www.amazon.de/dp/B0FWK2WTF8", title: "Nose Plasters Snoring Pack of 30 Snoring Stoppers, Reinforced Support Expands Nose Passages, Nose Strips Relieves Constipation, Improves Sleep, Anti Snoring", subtitle: "深层清洁", price: "€9.99", image: b1 },
+  { url: "https://www.amazon.de/dp/B0FWK2WTF8", title: "Nose Plasters Snoring Pack of 30 Snoring Stoppers, Reinforced Support Expands Nose Passages, Nose Strips Relieves Constipation, Improves Sleep, Anti Snoring", subtitle: "去黑头神器", price: "€9.99", image: b2 },
+  { url: "https://www.amazon.de/dp/B0FWK2WTF8", title: "Nose Plasters Snoring Pack of 30 Snoring Stoppers, Reinforced Support Expands Nose Passages, Nose Strips Relieves Constipation, Improves Sleep, Anti Snoring", subtitle: "温和配方", price: "€9.99", image: b3 },
+  { url: "https://www.amazon.de/dp/B0FWK2WTF8", title: "Nose Plasters Snoring Pack of 30 Snoring Stoppers, Reinforced Support Expands Nose Passages, Nose Strips Relieves Constipation, Improves Sleep, Anti Snoring", subtitle: "快速见效", price: "€9.99", image: b4 },
+  { url: "https://www.amazon.de/dp/B0FWK2WTF8", title: "Nose Plasters Snoring Pack of 30 Snoring Stoppers, Reinforced Support Expands Nose Passages, Nose Strips Relieves Constipation, Improves Sleep, Anti Snoring", subtitle: "天然成分", price: "€9.99", image: b5 },
+  { url: "https://www.amazon.de/dp/B0FWK2WTF8", title: "Nose Plasters Snoring Pack of 30 Snoring Stoppers, Reinforced Support Expands Nose Passages, Nose Strips Relieves Constipation, Improves Sleep, Anti Snoring", subtitle: "男女适用", price: "€9.99", image: b6 },
+  { url: "https://www.amazon.de/dp/B0FWK2WTF8", title: "Nose Plasters Snoring Pack of 30 Snoring Stoppers, Reinforced Support Expands Nose Passages, Nose Strips Relieves Constipation, Improves Sleep, Anti Snoring", subtitle: "便携装", price: "€9.99", image: b7 },
+];
+
+const erse = [
+  { url: "https://www.amazon.de/dp/B0FPFS8ZHF?th=1", title: "Ear Plugs for Sleeping Against Snoring & Noise - Ear Plugs Swimming Non-Slip Seat for Side Sleepers, Swimming and Sports - Ideal for Travel, Office and Exercise Purple", subtitle: "降噪效果好", price: "€9.99", image: c1 },
+  { url: "https://www.amazon.de/dp/B0FPFS8ZHF?th=1", title: "Ear Plugs for Sleeping Against Snoring & Noise - Ear Plugs Swimming Non-Slip Seat for Side Sleepers, Swimming and Sports - Ideal for Travel, Office and Exercise Purple", subtitle: "柔软舒适", price: "€9.99", image: c2 },
+  { url: "https://www.amazon.de/dp/B0FPFS8ZHF?th=1", title: "Ear Plugs for Sleeping Against Snoring & Noise - Ear Plugs Swimming Non-Slip Seat for Side Sleepers, Swimming and Sports - Ideal for Travel, Office and Exercise Purple", subtitle: "高保真音质", price: "€9.99", image: c3 },
+  { url: "https://www.amazon.de/dp/B0FPFS8ZHF?th=1", title: "Ear Plugs for Sleeping Against Snoring & Noise - Ear Plugs Swimming Non-Slip Seat for Side Sleepers, Swimming and Sports - Ideal for Travel, Office and Exercise Purple", subtitle: "运动专用", price: "€9.99", image: c4 },
+  { url: "https://www.amazon.de/dp/B0FPFS8ZHF?th=1", title: "Ear Plugs for Sleeping Against Snoring & Noise - Ear Plugs Swimming Non-Slip Seat for Side Sleepers, Swimming and Sports - Ideal for Travel, Office and Exercise Purple", subtitle: "无线蓝牙", price: "€9.99", image: c5 },
+  { url: "https://www.amazon.de/dp/B0FPFS8ZHF?th=1", title: "Ear Plugs for Sleeping Against Snoring & Noise - Ear Plugs Swimming Non-Slip Seat for Side Sleepers, Swimming and Sports - Ideal for Travel, Office and Exercise Purple", subtitle: "长续航", price: "€9.99", image: c6 },
+];
+
+const qingjieshua = [
+  { url: "https://www.amazon.de/dp/B0FWZHHJHY", title: "10pcs Joint Brush, Bathroom Cleaning Brush, Hard Bristle Corner Cleaning Brush, Perfect for Bathroom, Kitchen, Toilet, Sink and Floor", subtitle: "多功能清洁", price: "€9.99", image: d1 },
+  { url: "https://www.amazon.de/dp/B0FWZHHJHY", title: "10pcs Joint Brush, Bathroom Cleaning Brush, Hard Bristle Corner Cleaning Brush, Perfect for Bathroom, Kitchen, Toilet, Sink and Floor", subtitle: "高效去污", price: "€9.99", image: d2 },
+  { url: "https://www.amazon.de/dp/B0FWZHHJHY", title: "10pcs Joint Brush, Bathroom Cleaning Brush, Hard Bristle Corner Cleaning Brush, Perfect for Bathroom, Kitchen, Toilet, Sink and Floor", subtitle: "环保材质", price: "€9.99", image: d3 },
+  { url: "https://www.amazon.de/dp/B0FWZHHJHY", title: "10pcs Joint Brush, Bathroom Cleaning Brush, Hard Bristle Corner Cleaning Brush, Perfect for Bathroom, Kitchen, Toilet, Sink and Floor", subtitle: "小巧便携", price: "€9.99", image: d4 },
+  { url: "https://www.amazon.de/dp/B0FWZHHJHY", title: "10pcs Joint Brush, Bathroom Cleaning Brush, Hard Bristle Corner Cleaning Brush, Perfect for Bathroom, Kitchen, Toilet, Sink and Floor", subtitle: "耐用性强", price: "€9.99", image: d5 },
+  { url: "https://www.amazon.de/dp/B0FWZHHJHY", title: "10pcs Joint Brush, Bathroom Cleaning Brush, Hard Bristle Corner Cleaning Brush, Perfect for Bathroom, Kitchen, Toilet, Sink and Floor", subtitle: "多用途设计", price: "€9.99", image: d6 },
+];
+
+const qudoutie = [
+  { url: "https://www.amazon.de/dp/B0FPG24X58?language=en_GB", title: "Invisible Pimple Patch - Hydrocolloid Plaster Waterproof & Breathable, Strong Absorption, Residue-Free, Acne Treatment (10 mm & 12 mm, 360 Pimple Patches)", subtitle: "快速消痘", price: "€9.99", image: e1 },
+  { url: "https://www.amazon.de/dp/B0FPG24X58?language=en_GB", title: "Invisible Pimple Patch - Hydrocolloid Plaster Waterproof & Breathable, Strong Absorption, Residue-Free, Acne Treatment (10 mm & 12 mm, 360 Pimple Patches)", subtitle: "舒缓肌肤", price: "€9.99", image: e2 },
+  { url: "https://www.amazon.de/dp/B0FPG24X58?language=en_GB", title: "Invisible Pimple Patch - Hydrocolloid Plaster Waterproof & Breathable, Strong Absorption, Residue-Free, Acne Treatment (10 mm & 12 mm, 360 Pimple Patches)", subtitle: "天然草本", price: "€9.99", image: e3 },
+  { url: "https://www.amazon.de/dp/B0FPG24X58?language=en_GB", title: "Invisible Pimple Patch - Hydrocolloid Plaster Waterproof & Breathable, Strong Absorption, Residue-Free, Acne Treatment (10 mm & 12 mm, 360 Pimple Patches)", subtitle: "隐形设计", price: "€9.99", image: e4 },
+  { url: "https://www.amazon.de/dp/B0FPG24X58?language=en_GB", title: "Invisible Pimple Patch - Hydrocolloid Plaster Waterproof & Breathable, Strong Absorption, Residue-Free, Acne Treatment (10 mm & 12 mm, 360 Pimple Patches)", subtitle: "温和不刺激", price: "€9.99", image: e5 },
+  { url: "https://www.amazon.de/dp/B0FPG24X58?language=en_GB", title: "Invisible Pimple Patch - Hydrocolloid Plaster Waterproof & Breathable, Strong Absorption, Residue-Free, Acne Treatment (10 mm & 12 mm, 360 Pimple Patches)", subtitle: "长效防护", price: "€9.99", image: e6 },
+];
+
+const rutie = [
+  { url: "https://www.amazon.de/dp/B0FQBY5GRS?th=1&psc=1", title: "2 Pairs of Nipple Pads Nipple Cover Waterproof & Invisible Reusable Nipple Cover with Carry Bag", subtitle: "防溢乳神器", price: "€9.99", image: f1 },
+  { url: "https://www.amazon.de/dp/B0FQBY5GRS?th=1&psc=1", title: "2 Pairs of Nipple Pads Nipple Cover Waterproof & Invisible Reusable Nipple Cover with Carry Bag", subtitle: "透气舒适", price: "€9.99", image: f2 },
+  { url: "https://www.amazon.de/dp/B0FQBY5GRS?th=1&psc=1", title: "2 Pairs of Nipple Pads Nipple Cover Waterproof & Invisible Reusable Nipple Cover with Carry Bag", subtitle: "隐形设计", price: "€9.99", image: f3 },
+  { url: "https://www.amazon.de/dp/B0FQBY5GRS?th=1&psc=1", title: "2 Pairs of Nipple Pads Nipple Cover Waterproof & Invisible Reusable Nipple Cover with Carry Bag", subtitle: "超薄材质", price: "€9.99", image: f4 },
+  { url: "https://www.amazon.de/dp/B0FQBY5GRS?th=1&psc=1", title: "2 Pairs of Nipple Pads Nipple Cover Waterproof & Invisible Reusable Nipple Cover with Carry Bag", subtitle: "防水防汗", price: "€9.99", image: f5 },
+  { url: "https://www.amazon.de/dp/B0FQBY5GRS?th=1&psc=1", title: "2 Pairs of Nipple Pads Nipple Cover Waterproof & Invisible Reusable Nipple Cover with Carry Bag", subtitle: "一次性使用", price: "€9.99", image: f6 },
+];
+
+const zipaigan = [
+  { url: "https://www.amazon.de/dp/B0FYDLMRWD", title: "Selfie Stick & Hand Tripod, 170 cm Portable Tripod for Smartphone with Wireless Remote Shutter, Compatible with iPhone/Android", subtitle: "轻便易携带", price: "€14.99", image: g1 },
+  { url: "https://www.amazon.de/dp/B0FYDLMRWD", title: "Selfie Stick & Hand Tripod, 170 cm Portable Tripod for Smartphone with Wireless Remote Shutter, Compatible with iPhone/Android", subtitle: "蓝牙遥控", price: "€14.99", image: g2 },
+  { url: "https://www.amazon.de/dp/B0FYDLMRWD", title: "Selfie Stick & Hand Tripod, 170 cm Portable Tripod for Smartphone with Wireless Remote Shutter, Compatible with iPhone/Android", subtitle: "伸缩自如", price: "€14.99", image: g3 },
+  { url: "https://www.amazon.de/dp/B0FYDLMRWD", title: "Selfie Stick & Hand Tripod, 170 cm Portable Tripod for Smartphone with Wireless Remote Shutter, Compatible with iPhone/Android", subtitle: "稳固支撑", price: "€14.99", image: g4 },
+  { url: "https://www.amazon.de/dp/B0FYDLMRWD", title: "Selfie Stick & Hand Tripod, 170 cm Portable Tripod for Smartphone with Wireless Remote Shutter, Compatible with iPhone/Android", subtitle: "兼容性强", price: "€14.99", image: g5 },
+  { url: "https://www.amazon.de/dp/B0FYDLMRWD", title: "Selfie Stick & Hand Tripod, 170 cm Portable Tripod for Smartphone with Wireless Remote Shutter, Compatible with iPhone/Android", subtitle: "高清拍摄", price: "€14.99", image: g6 },
+  { url: "https://www.amazon.de/dp/B0FYDLMRWD", title: "Selfie Stick & Hand Tripod, 170 cm Portable Tripod for Smartphone with Wireless Remote Shutter, Compatible with iPhone/Android", subtitle: "折叠收纳", price: "€14.99", image: g7 },
 ];
 ---
 
-<section>
-  <div
-    class="grid grid-cols-1 gap-6 lg:gap-y-24 md:grid-cols-2 lg:grid-cols-3 py-12"
-  >
-    {
-      products.map((product) => (
-        <figure class="relative ">
-          <a href={product.url} aria-hidden="true" class="absolute inset-0" />
-          <Image
-            width="800"
-            height="800"
-            alt={product.title}
-            src={product.image}
-            class="w-full rounded-3xl shadow aspect-12/9 object-cover object-center"
-          />
-          <div class="mt-2 flex justify-between px-6">
-            <div>
-              <p class="mt-1 text-sm font-medium  text-base-900">
-                {product.subtitle}
-              </p>
-              <h3 class="text-xs text-base-500">{product.title}</h3>
+<!-- 页面主体：一行展示 3 个轮播 -->
+<div class="page-container">
+  <!-- 第一组轮播 -->
+  <div class="carousel-wrapper">
+    <div class="carousel-container" id="first-carousel">
+      <div class="carousel">
+        {tag.map((product, index) => (
+          <div class="carousel-item" id={`slide-${index}`}>
+            <a href={product.url} class="absolute inset-0 z-10"></a>
+            <Image width="336" height="300" alt={product.title} src={product.image} class="w-full rounded-3xl shadow aspect-12/9 object-cover object-center" />
+            <div class="mt-2 flex justify-between px-6 relative z-20">
+              <div>
+                <p class="mt-1 text-sm font-medium text-base-900">{product.subtitle}</p>
+                <h3 class="custom-title">{product.title}</h3>
+              </div>
+              <p class="text-base text-orange-600">{product.price}</p>
             </div>
-            <p class="text-base text-orange-600">{product.price}</p>
           </div>
-        </figure>
-      ))
-    }
+        ))}
+      </div>
+      <button class="carousel-btn prev" data-target="first-carousel">❮</button>
+      <button class="carousel-btn next" data-target="first-carousel">❯</button>
+    </div>
   </div>
-</section>
+
+  <!-- 第二组轮播 -->
+  <div class="carousel-wrapper">
+    <div class="carousel-container" id="second-carousel">
+      <div class="carousel">
+        {bahentie.map((product, index) => (
+          <div class="carousel-item" id={`second-slide-${index}`}>
+            <a href={product.url} class="absolute inset-0 z-10"></a>
+            <Image width="336" height="300" alt={product.title} src={product.image} class="w-full rounded-3xl shadow aspect-12/9 object-cover object-center" />
+            <div class="mt-2 flex justify-between px-6 relative z-20">
+              <div>
+                <p class="mt-1 text-sm font-medium text-base-900">{product.subtitle}</p>
+                <h3 class="custom-title">{product.title}</h3>
+              </div>
+              <p class="text-base text-orange-600">{product.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button class="carousel-btn prev" data-target="second-carousel">❮</button>
+      <button class="carousel-btn next" data-target="second-carousel">❯</button>
+    </div>
+  </div>
+
+  <!-- 第三组轮播 -->
+  <div class="carousel-wrapper">
+    <div class="carousel-container" id="third-carousel">
+      <div class="carousel">
+        {bitie.map((product, index) => (
+          <div class="carousel-item" id={`third-slide-${index}`}>
+            <a href={product.url} class="absolute inset-0 z-10"></a>
+            <Image width="336" height="300" alt={product.title} src={product.image} class="w-full rounded-3xl shadow aspect-12/9 object-cover object-center" />
+            <div class="mt-2 flex justify-between px-6 relative z-20">
+              <div>
+                <p class="mt-1 text-sm font-medium text-base-900">{product.subtitle}</p>
+                <h3 class="custom-title">{product.title}</h3>
+              </div>
+              <p class="text-base text-orange-600">{product.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button class="carousel-btn prev" data-target="third-carousel">❮</button>
+      <button class="carousel-btn next" data-target="third-carousel">❯</button>
+    </div>
+  </div>
+</div>
+
+<!-- 下一行轮播 -->
+<div class="page-container">
+  <!-- 第四组轮播 -->
+  <div class="carousel-wrapper">
+    <div class="carousel-container" id="fourth-carousel">
+      <div class="carousel">
+        {erse.map((product, index) => (
+          <div class="carousel-item" id={`fourth-slide-${index}`}>
+            <a href={product.url} class="absolute inset-0 z-10"></a>
+            <Image width="336" height="300" alt={product.title} src={product.image} class="w-full rounded-3xl shadow aspect-12/9 object-cover object-center" />
+            <div class="mt-2 flex justify-between px-6 relative z-20">
+              <div>
+                <p class="mt-1 text-sm font-medium text-base-900">{product.subtitle}</p>
+                <h3 class="custom-title">{product.title}</h3>
+              </div>
+              <p class="text-base text-orange-600">{product.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button class="carousel-btn prev" data-target="fourth-carousel">❮</button>
+      <button class="carousel-btn next" data-target="fourth-carousel">❯</button>
+    </div>
+  </div>
+
+  <!-- 第五组轮播 -->
+  <div class="carousel-wrapper">
+    <div class="carousel-container" id="fifth-carousel">
+      <div class="carousel">
+        {qingjieshua.map((product, index) => (
+          <div class="carousel-item" id={`fifth-slide-${index}`}>
+            <a href={product.url} class="absolute inset-0 z-10"></a>
+            <Image width="336" height="300" alt={product.title} src={product.image} class="w-full rounded-3xl shadow aspect-12/9 object-cover object-center" />
+            <div class="mt-2 flex justify-between px-6 relative z-20">
+              <div>
+                <p class="mt-1 text-sm font-medium text-base-900">{product.subtitle}</p>
+                <h3 class="custom-title">{product.title}</h3>
+              </div>
+              <p class="text-base text-orange-600">{product.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button class="carousel-btn prev" data-target="fifth-carousel">❮</button>
+      <button class="carousel-btn next" data-target="fifth-carousel">❯</button>
+    </div>
+  </div>
+
+  <!-- 第六组轮播 -->
+  <div class="carousel-wrapper">
+    <div class="carousel-container" id="sixth-carousel">
+      <div class="carousel">
+        {qudoutie.map((product, index) => (
+          <div class="carousel-item" id={`sixth-slide-${index}`}>
+            <a href={product.url} class="absolute inset-0 z-10"></a>
+            <Image width="336" height="300" alt={product.title} src={product.image} class="w-full rounded-3xl shadow aspect-12/9 object-cover object-center" />
+            <div class="mt-2 flex justify-between px-6 relative z-20">
+              <div>
+                <p class="mt-1 text-sm font-medium text-base-900">{product.subtitle}</p>
+                <h3 class="custom-title">{product.title}</h3>
+              </div>
+              <p class="text-base text-orange-600">{product.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button class="carousel-btn prev" data-target="sixth-carousel">❮</button>
+      <button class="carousel-btn next" data-target="sixth-carousel">❯</button>
+    </div>
+  </div>
+</div>
+
+<!-- 最后一行轮播 -->
+<div class="page-container">
+  <!-- 第七组轮播 -->
+  <div class="carousel-wrapper">
+    <div class="carousel-container" id="seventh-carousel">
+      <div class="carousel">
+        {rutie.map((product, index) => (
+          <div class="carousel-item" id={`seventh-slide-${index}`}>
+            <a href={product.url} class="absolute inset-0 z-10"></a>
+            <Image width="336" height="300" alt={product.title} src={product.image} class="w-full rounded-3xl shadow aspect-12/9 object-cover object-center" />
+            <div class="mt-2 flex justify-between px-6 relative z-20">
+              <div>
+                <p class="mt-1 text-sm font-medium text-base-900">{product.subtitle}</p>
+                <h3 class="custom-title">{product.title}</h3>
+              </div>
+              <p class="text-base text-orange-600">{product.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button class="carousel-btn prev" data-target="seventh-carousel">❮</button>
+      <button class="carousel-btn next" data-target="seventh-carousel">❯</button>
+    </div>
+  </div>
+
+  <!-- 第八组轮播 -->
+  <div class="carousel-wrapper">
+    <div class="carousel-container" id="eighth-carousel">
+      <div class="carousel">
+        {zipaigan.map((product, index) => (
+          <div class="carousel-item" id={`eighth-slide-${index}`}>
+            <a href={product.url} class="absolute inset-0 z-10"></a>
+            <Image width="336" height="300" alt={product.title} src={product.image} class="w-full rounded-3xl shadow aspect-12/9 object-cover object-center" />
+            <div class="mt-2 flex justify-between px-6 relative z-20">
+              <div>
+                <p class="mt-1 text-sm font-medium text-base-900">{product.subtitle}</p>
+                <h3 class="custom-title">{product.title}</h3>
+              </div>
+              <p class="text-base text-orange-600">{product.price}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button class="carousel-btn prev" data-target="eighth-carousel">❮</button>
+      <button class="carousel-btn next" data-target="eighth-carousel">❯</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .page-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .carousel-wrapper {
+    flex: 1;
+    max-width: 33.33%;
+  }
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .carousel-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: background 0.3s ease;
+  }
+
+  .carousel-item:hover a {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* 自定义标题样式 */
+  .custom-title {
+    font-size: 1rem; /* 字体大小 */
+    color: #ff6b6b; /* 字体颜色 */
+    font-weight: bold; /* 加粗 */
+  }
+</style>
+
+<script is:inline>
+  function moveSlide(targetId, direction) {
+    const container = document.getElementById(targetId);
+    const carousel = container.querySelector('.carousel');
+    const slides = container.querySelectorAll('.carousel-item');
+    const itemsPerPage = 1;
+    const totalPages = Math.ceil(slides.length / itemsPerPage);
+    let currentPage = parseInt(carousel.dataset.currentPage || 0);
+
+    currentPage += direction;
+
+    if (currentPage >= totalPages) {
+      currentPage = 0;
+    } else if (currentPage < 0) {
+      currentPage = totalPages - 1;
+    }
+
+    const offset = currentPage * itemsPerPage * 100;
+    carousel.style.transform = `translateX(-${offset}%)`;
+    carousel.dataset.currentPage = currentPage;
+  }
+
+  document.querySelectorAll('.carousel-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-target');
+      const direction = button.classList.contains('prev') ? -1 : 1;
+      moveSlide(targetId, direction);
+    });
+  });
+</script>
